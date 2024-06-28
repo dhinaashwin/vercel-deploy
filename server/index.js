@@ -5,7 +5,10 @@ const RegisterModel = require('./models/Register')
 
 const app = express()
 app.use(express.json())
-
+app.use(cors({
+  origin:['https://vercel-deploy-fe.vercel.app'],
+  methods:['POST','GET'],
+  credentials:true }));
 mongoose.connect('mongodb+srv://dhinaashwin11:Mongopassword@cluster0.iyp2kv4.mongodb.net/new-base?retryWrites=true&w=majority&appName=Cluster0')
 const allowCors = fn => async (req, res) => {
   res.setHeader('Access-Control-Allow-Credentials', true)
