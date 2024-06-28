@@ -6,7 +6,7 @@ const RegisterModel = require('./models/Register')
 const app = express()
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://dhinaashwin11:Mongopassword@cluster0.iyp2kv4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://dhinaashwin11:Mongopassword@cluster0.iyp2kv4.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0')
 
 app.get("/", (req, res) => {
     res.json("Hello");
