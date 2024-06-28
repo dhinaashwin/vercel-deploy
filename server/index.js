@@ -4,7 +4,7 @@ const cors = require('cors')
 const RegisterModel = require('./models/Register')
 
 const app = express()
-app.use(cors(
+const corsConfig = app.use(cors(
     {
         origin: ["https://vercel-deploy-fe.vercel.app"]
         methods: ["POST", "GET"],
@@ -12,7 +12,7 @@ app.use(cors(
     }
 ));
 app.use(express.json())
-
+app.options("",cors(corsConfig))
 mongoose.connect('mongodb+srv://dhinaashwin11:Mongodbpassword@cluster0.xbksv2x.mongodb.net/test?retryWrites=true&w=majority')
 
 app.get("/", (req, res) => {
